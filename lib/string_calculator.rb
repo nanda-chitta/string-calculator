@@ -6,7 +6,12 @@ module StringCalculator
 
     num = numbers(str)
     raise_if_negative(num)
+    ignore_numbers(num)
     num.inject(:+)
+  end
+
+  def ignore_numbers(num)
+    num.reject! { |n| n > 1000 }
   end
 
   def raise_if_negative(num)
