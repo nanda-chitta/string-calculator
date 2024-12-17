@@ -72,6 +72,10 @@ RSpec.describe StringCalculator, type: :module do
       it 'should allow the semicolon' do
         expect(add("//;\n1;2;3")).to eq(6)
       end
+
+      it 'should allow the letter' do
+        expect(add("//x52$55@51X14")).to eq(172)
+      end
     end
   end
 end
