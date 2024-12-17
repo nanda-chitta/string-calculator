@@ -10,7 +10,7 @@ module StringCalculator
   end
 
   def raise_if_negative(num)
-    raise if negative_nums(num).any?
+    raise "Negative numbers not allowed: #{negative_nums(num).join(', ')}" if negative_nums(num).any?
   end
 
   def negative_nums(num)
