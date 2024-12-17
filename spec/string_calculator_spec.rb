@@ -80,6 +80,10 @@ RSpec.describe StringCalculator, type: :module do
       it 'should allow the special delimiter' do
         expect(add('//[***]\n1***2***3')).to eq(6)
       end
+
+      it 'should allow the multiple delimiter' do
+        expect(add('//[*][%]\n1*2%3')).to eq(6)
+      end
     end
 
     context 'when negative numbers' do
