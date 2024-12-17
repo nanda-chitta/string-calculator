@@ -5,10 +5,7 @@ module StringCalculator
     return 0 if str.empty?
 
     num = numbers(str)
-    return num.inject(:+) if num.length > 2
-    return num[0] + num[1] if str.include?(',')
-
-    str.to_i
+    num.inject(:+)
   end
 
   def numbers(str)
