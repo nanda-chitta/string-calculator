@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'config/utils'
+
 RSpec.describe StringCalculator, type: :module do
   describe 'string_calculator' do
     it 'return should defined as "constant"' do
