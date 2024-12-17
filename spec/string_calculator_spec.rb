@@ -99,5 +99,11 @@ RSpec.describe StringCalculator, type: :module do
         expect { add('10abdbvb-babd10djbvfhvg-8bjdsbj-6') }.to raise_error('Negative numbers not allowed: -8, -6')
       end
     end
+
+    context 'when numbers 4 digit ignored' do
+      it 'should ignored for number greater than 1000' do
+        expect(add('2,1001')).to eq(2)
+      end
+    end
   end
 end
