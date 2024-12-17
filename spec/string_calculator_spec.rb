@@ -20,15 +20,15 @@ RSpec.describe StringCalculator, type: :module do
 
     context 'when single number' do
       it 'return 1 if pass "1" string as argument' do
-        expect(add("1")).to eq(1)
+        expect(add('1')).to eq(1)
       end
 
       it 'return 5 if pass "5" as argument' do
-        expect(add("5")).to eq(5)
+        expect(add('5')).to eq(5)
       end
 
       it 'return 25 if pass "25" as argument' do
-        expect(add("25")).to eq(25)
+        expect(add('25')).to eq(25)
       end
     end
 
@@ -74,7 +74,13 @@ RSpec.describe StringCalculator, type: :module do
       end
 
       it 'should allow the letter' do
-        expect(add("//x52$55@51X14")).to eq(172)
+        expect(add('//x52$55@51X14')).to eq(172)
+      end
+    end
+
+    context 'when negative numbers' do
+      it 'should raise an exception for negative number' do
+        expect { add('-1,\n2;3') }.to raise_error
       end
     end
   end
