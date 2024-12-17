@@ -17,5 +17,11 @@ RSpec.describe StringCalculator, type: :module do
     it 'return 0 for empty string' do
       expect(add('')).to eq(0)
     end
+
+    context 'when single number' do
+      it 'return number' do
+        expect(add("1")).to eq(1)
+      end
+    end
   end
 end
