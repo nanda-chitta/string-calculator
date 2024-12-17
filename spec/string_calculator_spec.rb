@@ -19,8 +19,12 @@ RSpec.describe StringCalculator, type: :module do
     end
 
     context 'when single number' do
-      it 'return number' do
+      it 'return 1 if pass "1" string as argument' do
         expect(add("1")).to eq(1)
+      end
+
+      it 'return 5 if pass "5" as argument' do
+        expect(add("5")).to eq(5)
       end
     end
   end
