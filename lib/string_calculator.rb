@@ -3,9 +3,13 @@
 module StringCalculator
   def add(str)
     return 0 if str.empty?
-    numbers = str.split(',')
-    return numbers[0].to_i + numbers[1].to_i if str.include?(',')
+    num = numbers(str)
+    return num[0] + num[1] if str.include?(',')
 
     str.to_i
+  end
+
+  def numbers(str)
+    str.scan(/\d+/).map(&:to_i)
   end
 end
