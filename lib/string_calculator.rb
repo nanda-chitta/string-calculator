@@ -2,6 +2,8 @@
 
 module StringCalculator
   def add(str)
-    0
+    return 0 if str.empty?
+
+    1
   end
 end
