@@ -41,5 +41,11 @@ RSpec.describe StringCalculator, type: :module do
         expect(add('12,5')).to eq(17)
       end
     end
+
+    context 'when three numbers' do
+      it 'return 6 for "1,2,3" as input' do
+        expect(add('1,2,3')).to eq(6)
+      end
+    end
   end
 end
