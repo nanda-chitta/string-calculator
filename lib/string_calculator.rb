@@ -4,16 +4,20 @@ module StringCalculator
   def add(str)
     return 0 if str.empty?
 
-    raise_if_negative(str)
     num = numbers(str)
+    raise_if_negative(num)
     num.inject(:+)
+  end
+
+  def raise_if_negative(num)
+    raise if negative_nums(num).any?
+  end
+
+  def negative_nums(num)
+    num.select(&:negative?)
   end
 
   def numbers(str)
     str.scan(/-?\d+/).map(&:to_i)
-  end
-
-  def raise_if_negative(str)
-    raise if str.include?('-')
   end
 end
