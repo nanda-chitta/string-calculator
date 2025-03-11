@@ -62,6 +62,10 @@ RSpec.describe StringCalculator, type: :module do
       it 'return 3 for "1\n2" for the delimiter' do
         expect(add("1\n2")).to eq(3)
       end
+
+      it 'should add for newline and comma' do
+        expect(add("1\n2,3")).to eq(6)
+      end
     end
   end
 end
