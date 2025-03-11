@@ -85,5 +85,11 @@ RSpec.describe StringCalculator, type: :module do
         expect(add('//[*][%]\n1*2%3')).to eq(6)
       end
     end
+
+    context 'when negative numbers' do
+      it 'should raise an exception for negative number' do
+        expect { add('-1,\n2;3') }.to raise_error
+      end
+    end
   end
 end
