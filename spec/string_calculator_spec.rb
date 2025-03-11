@@ -57,5 +57,11 @@ RSpec.describe StringCalculator, type: :module do
         expect(add((['15'] * 100).join(','))).to eq(1500)
       end
     end
+
+    context 'when newlines as delimiters' do
+      it 'return 3 for "1\n2" for the delimiter' do
+        expect(add("1\n2")).to eq(3)
+      end
+    end
   end
 end
