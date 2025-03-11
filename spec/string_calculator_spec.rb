@@ -90,6 +90,14 @@ RSpec.describe StringCalculator, type: :module do
       it 'should raise an exception for negative number' do
         expect { add('-1,\n2;3') }.to raise_error
       end
+
+      it 'should raise an exception with message for negative number' do
+        expect { add('-2,\n-5;3') }.to raise_error('Negative numbers not allowed: -2, -5')
+      end
+
+      it 'should raise an exception and message for negative number with letter' do
+        expect { add('10abdbvb-babd10djbvfhvg-8bjdsbj-6') }.to raise_error('Negative numbers not allowed: -8, -6')
+      end
     end
   end
 end
