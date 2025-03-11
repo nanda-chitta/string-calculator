@@ -17,5 +17,11 @@ RSpec.describe StringCalculator, type: :module do
     it 'should return 0 for empty string' do
       expect(add('')).to eq(0)
     end
+
+    context 'When single number' do
+      it 'return 3 if pass "3" string as argument' do
+        expect(add('3')).to eq(3)
+      end
+    end
   end
 end
