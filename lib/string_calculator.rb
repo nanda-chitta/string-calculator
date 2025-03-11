@@ -4,8 +4,8 @@ module StringCalculator
   def add(str)
     return 0 if str.empty?
 
-    raise_if_negative(str)
     digits = numbers(str)
+    raise_if_negative(digits)
     digits.reduce { |sum, digit| sum + digit }
   end
 
@@ -13,7 +13,11 @@ module StringCalculator
     str.scan(/-?\d+/).map(&:to_i)
   end
 
-  def raise_if_negative(str)
-    raise if str.include?('-')
+  def raise_if_negative(num)
+    raise "Negative numbers not allowed: #{negative?(num).join(', ')}" if negative?(num).any?
+  end
+
+  def negative?(num)
+    num.select(&:negative?)
   end
 end
