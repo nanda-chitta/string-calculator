@@ -67,5 +67,11 @@ RSpec.describe StringCalculator, type: :module do
         expect(add("1\n2,3")).to eq(6)
       end
     end
+
+    context 'when custom delimiters' do
+      it 'should allow the semicolon' do
+        expect(add("//;\n1;2;3")).to eq(6)
+      end
+    end
   end
 end
