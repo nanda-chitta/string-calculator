@@ -6,6 +6,7 @@ module StringCalculator
 
     digits = numbers(str)
     raise_if_negative(digits)
+    ignore_four_digit_numbers(digits)
     digits.reduce { |sum, digit| sum + digit }
   end
 
@@ -19,5 +20,9 @@ module StringCalculator
 
   def negative?(num)
     num.select(&:negative?)
+  end
+
+  def ignore_four_digit_numbers(num)
+    num.reject! { |n| n > 999 }
   end
 end
