@@ -46,6 +46,10 @@ RSpec.describe StringCalculator, type: :module do
       it 'return 6 for "1,2,3" as input' do
         expect(add('1,2,3')).to eq(6)
       end
+
+      it 'return 1170 for "200,150,208" as input' do
+        expect(add('200,150,820')).to eq(1170)
+      end
     end
   end
 end
