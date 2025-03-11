@@ -5,10 +5,7 @@ module StringCalculator
     return 0 if str.empty?
 
     digits = numbers(str)
-    return digits.reduce { |sum, digit| sum + digit } if digits.length > 2
-    return digits[0] + digits[1] if str.include?(',')
-
-    str.to_i
+    digits.reduce { |sum, digit| sum + digit }
   end
 
   def numbers(str)
