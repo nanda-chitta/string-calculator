@@ -31,5 +31,11 @@ RSpec.describe StringCalculator, type: :module do
         expect(add('25')).to eq(25)
       end
     end
+
+    context 'when two numbers' do
+      it 'return 3 for "1,2" as input' do
+        expect(add('1,2')).to eq(3)
+      end
+    end
   end
 end
