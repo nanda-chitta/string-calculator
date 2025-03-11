@@ -3,8 +3,10 @@
 module StringCalculator
   def add(str)
     return 0 if str.empty?
-    digits = str.split(',')
-    return digits[0].to_i + digits[1].to_i if str.include?(',')
+
+    digits = str.split(',').map(&:to_i)
+    return digits[0] + digits[1] if str.include?(',')
+
     str.to_i
   end
 end
