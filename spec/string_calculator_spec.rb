@@ -51,5 +51,11 @@ RSpec.describe StringCalculator, type: :module do
         expect(add('200,150,820')).to eq(1170)
       end
     end
+
+    context 'when many numbers' do
+      it "return 1500 for 100 15's" do
+        expect(add((['15'] * 100).join(','))).to eq(1500)
+      end
+    end
   end
 end
