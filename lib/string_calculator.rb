@@ -3,6 +3,7 @@
 module StringCalculator
   def add(str)
     return 0 if str.empty?
+    raise if str.include?('-')
 
     digits = numbers(str)
     digits.reduce { |sum, digit| sum + digit }
