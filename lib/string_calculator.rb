@@ -9,10 +9,6 @@ module StringCalculator
   end
 
   def numbers(str)
-    str.gsub("\n", delimiter).split(delimiter).map(&:to_i)
-  end
-
-  def delimiter
-    ','
+    str.scan(/-?\d+/).map(&:to_i)
   end
 end
