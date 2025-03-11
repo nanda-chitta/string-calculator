@@ -22,6 +22,14 @@ RSpec.describe StringCalculator, type: :module do
       it 'return 3 if pass "3" string as argument' do
         expect(add('3')).to eq(3)
       end
+
+      it 'return 5 if pass "5" as argument' do
+        expect(add('5')).to eq(5)
+      end
+
+      it 'return 25 if pass "25" as argument' do
+        expect(add('25')).to eq(25)
+      end
     end
   end
 end
