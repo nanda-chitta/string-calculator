@@ -4,7 +4,7 @@
 
 1. Create a simple String calculator with a method signature like this:
 ```sh
-def add(str); end
+def add(str); end # method to calculate sum of integer from string
 
 Input: a string of comma-separated numbers
 Output: an integer, sum of the numbers
